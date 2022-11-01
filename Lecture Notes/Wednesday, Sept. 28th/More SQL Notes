@@ -1,0 +1,132 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP8AGW260CsHcddR4WoeAI/",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/NSteckel/Data-in-Python/blob/main/Wednesday%2C_Sept_28th.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# More SQL notes"
+      ],
+      "metadata": {
+        "id": "00BM2RNfz8O5"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "####Indexes:\n",
+        "- Increase the query/read speed along a certain column\n",
+        "- Primary Keys\n",
+        "- Automaticallly have a unique index\n",
+        "- Other Indexes\n",
+        "- Unique or non-unique\n",
+        "- all indexes are a type of B-tree in postgres\n",
+        "- Indexes increase the read speed/decrease your write speed\n",
+        "- Indexing is determined by data access patterns\n",
+        "- If you have to do joins, index the foreign key\n",
+        "- Indexes will be unique automaticallly if the column is unique\n",
+        "-"
+      ],
+      "metadata": {
+        "id": "qFfNbFMbiwl3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#### Sequences\n",
+        "- Exist for the primary key with 'serial' data type\n",
+        "- typically provide sequences to help with surrogate primary keys\n",
+        "- surrogate pk: when you don't have a logical column to be a primary key\n",
+        "- can also use sequences on multiple tables\n"
+      ],
+      "metadata": {
+        "id": "H79EkDhgos9S"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##### Properties\n",
+        "- startwith, restartwith, minvalue, maxvalue, cache\n",
+        "- functions\n",
+        "- nextval() and currval()\n",
+        "- increment by"
+      ],
+      "metadata": {
+        "id": "dcwUk3GDpuo0"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "- Check this sequence / index stuff later\n",
+        "\n",
+        "create sequence users_user_id_seq_2\n",
+        "start with 101\n",
+        "increment by 1;\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "LzCBWwtDsW-5"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#### Filtering Data\n",
+        "- WHERE clause\n",
+        "- *, !=, >, <, <=, >=\n",
+        "- LIKE, ILIKE, %5 - for pattern matcing\n",
+        "- (%) - matches any sequence of zero or more characters\n",
+        "- _ matches a single character\n",
+        "- where salary like '%6_' matches a salary with a 6 in the tens position\n",
+        "- ILIKE - case insensitive match\n",
+        "- where salary is not like '____';\n",
+        "- where to_char(date, 'yyyy-mm') like '2014-01';\n",
+        "- in - check if a value is in a list\n",
+        "- where to_char(date, 'yyyy-mm') in ('2014-06', '2014-07', '2014-08')\n",
+        "- when using the in operator, keeyp the list short (<50) ~10 or less\n",
+        "- between operator - where salary between 50000 and 100000\n",
+        "- is null, is not null to compare against null values\n",
+        "- combine conditions with and and or"
+      ],
+      "metadata": {
+        "id": "wGmKKuh3yvdC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "FQNU1c-2h3gJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
